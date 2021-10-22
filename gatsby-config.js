@@ -1,7 +1,12 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "hanaticket",
+    siteUrl: 'https://limeunseop.github.io/hanaticket',
+    title: 'hanaticket',
   },
-  plugins: ["gatsby-plugin-sass"],
-};
+  pathPrefix: '/hanaticket',
+  plugins: [
+    'gatsby-plugin-sass',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+  ],
+}

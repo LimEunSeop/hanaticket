@@ -1,0 +1,72 @@
+@import '../../styles/configs.scss';
+@import '../../styles/mixins.scss';
+
+$nav-height: 43px;
+
+.wrapper {
+  position: relative;
+  display: flex;
+  font-size: 16px;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    li {
+      font-weight: 400;
+      height: $nav-height;
+      line-height: $nav-height;
+
+      a {
+        box-sizing: border-box;
+        display: block;
+
+        padding: 0 16px;
+      }
+
+      &.first {
+        &.active {
+          color: #f63d8b;
+          border-bottom: 3px solid #f63d8b;
+        }
+      }
+      &.second {
+        color: #54bfe8;
+        a {
+          padding: 0 12px;
+        }
+      }
+      &.third {
+        a {
+          padding: 0 8px;
+          img {
+            width: 16px;
+            margin-right: 3px;
+          }
+        }
+      }
+      &.has-border {
+        position: relative;
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: -2px;
+          transform: translateY(-50%);
+          height: 22px;
+          border-left: 1px solid $border-color;
+        }
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    @include absolute-fill-100vw;
+    z-index: -1;
+    border-bottom: 1px solid $border-color;
+  }
+}

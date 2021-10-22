@@ -1,0 +1,65 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/configs.scss';
+
+.logo-area {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    @include absolute-fill-100vw;
+    z-index: -1;
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.search {
+  position: relative;
+  width: 480px;
+  height: 40px;
+  background: url(../../assets/icons/s_bg.png) no-repeat bottom / contain;
+
+  input {
+    width: calc(100% - 35px);
+    height: 100%;
+    background: none;
+    border: none;
+    vertical-align: bottom;
+    outline: none;
+
+    &::placeholder {
+      font-weight: 300;
+    }
+  }
+  button {
+    width: 35px;
+    height: 100%;
+    vertical-align: bottom;
+  }
+}
+
+.banner {
+  position: relative;
+  margin-left: 35px;
+
+  img {
+    vertical-align: bottom;
+    margin-top: 1px; // sitetop의 border 가 가려지는것을 방지
+  }
+
+  .buttons {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+  }
+}
