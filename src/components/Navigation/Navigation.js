@@ -99,11 +99,8 @@ const data = [
 const cx = classnames.bind(styles)
 
 const Navigation = () => {
-  const [opened, setOpened] = useState(false)
   const [activeDetailIdx, setActiveDetailIdx] = useState(null)
   const [fullNavOpened, setFullnavOpened] = useState(false)
-
-  const handleGnbButtonClick = () => setOpened(!opened)
 
   const handleNavMouseEnter = (e) => {
     const currentTarget = e.currentTarget
@@ -116,16 +113,19 @@ const Navigation = () => {
   const handleEtcNavMouseEnter = () => {
     setActiveDetailIdx(null)
   }
+  const handleFullNavButtonClick = () => {
+    setFullnavOpened(!fullNavOpened)
+  }
 
   return (
-    <div onMouseLeave={handleNavMouseLeave}>
+    <section onMouseLeave={handleNavMouseLeave} className={styles.wrapper}>
       <h2 className="a11y-hidden">네비게이션</h2>
-      <nav className={styles.wrapper}>
+      <nav className={styles.primaryMenu}>
         <GnbButton
           type="button"
-          aria-label={opened ? '네비게이션 펼치기' : '네비게이션 닫기'}
-          className={opened && 'clicked'}
-          onClick={handleGnbButtonClick}
+          aria-label={fullNavOpened ? '네비게이션 펼치기' : '네비게이션 닫기'}
+          className={fullNavOpened && 'clicked'}
+          onClick={handleFullNavButtonClick}
           onMouseEnter={handleEtcNavMouseEnter}
           style={{ marginBottom: '-1px' }}
         />
@@ -175,8 +175,8 @@ const Navigation = () => {
         </ul>
       </nav>
       <NavDetail data={activeDetailIdx !== null && data[activeDetailIdx]} />
-      <FullNav opened={fullNavOpened} />
-    </div>
+      <FullNav data={data} opened={fullNavOpened} />
+    </section>
   )
 }
 

@@ -10,7 +10,7 @@ const NavDetail = ({ data }) => {
     return (
       <div className={styles.wrapper}>
         <div className={cx('info')}>
-          <div className={styles.subMenu}>
+          <section className={styles.subMenu}>
             <header>
               <h3>{data.menuName}</h3>
               <MoreLink to="#" className={styles.moreLink} />
@@ -22,8 +22,8 @@ const NavDetail = ({ data }) => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className={styles.recommend}>
+          </section>
+          <section className={styles.recommend}>
             <h3>추천 {data.menuName}</h3>
             <ul>
               {data.recommendImgs.map((img) => (
@@ -34,10 +34,11 @@ const NavDetail = ({ data }) => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className={styles.banner}>
+          </section>
+          <section className={styles.banner}>
+            <h3 className="a11y-hidden">{`${data.menuName}관련 배너`}</h3>
             <img src={data.bannerImg} alt="" />
-          </div>
+          </section>
         </div>
       </div>
     )
