@@ -7,3 +7,9 @@
   height: 100%;
   min-width: 100%;
 }
+
+@mixin normal-fill-100vw {
+  margin-left: min(calc((100vw - 100%) / -2), 0px);
+  min-width: 100%;
+  width: 100vw;
+}

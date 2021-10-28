@@ -11,6 +11,7 @@ const StyledNav = styled.nav`
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto;
   gap: 10px 90px;
+  padding-bottom: 20px;
 
   &::after {
     content: '';

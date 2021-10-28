@@ -34,7 +34,7 @@ $sitetop-height: 35px;
 
     &.active {
       background-color: #fff;
-      color: #c83d7f;
+      color: $signiture-color;
       border-bottom: 1px solid #fff;
       margin-bottom: -1px;
     }

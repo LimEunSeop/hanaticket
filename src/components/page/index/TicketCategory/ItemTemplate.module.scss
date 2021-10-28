@@ -1,0 +1,46 @@
+$item-height: 155px;
+
+.list {
+  margin-top: 25px;
+}
+
+.item {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  & + .item {
+    margin-top: 10px;
+  }
+}
+
+.img {
+  float: left;
+  width: 120px;
+  height: $item-height;
+}
+
+.info {
+  float: left;
+  width: calc(100% - 120px);
+  height: $item-height;
+  margin: 0;
+  padding: 32px;
+  background-color: #f8f8f8;
+}
+
+.title {
+}
+
+.hall {
+  margin-top: 10px;
+  color: #888;
+}
+
+.date {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #888;
+}

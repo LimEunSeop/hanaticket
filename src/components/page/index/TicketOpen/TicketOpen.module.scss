@@ -1,0 +1,76 @@
+@import '../../../../styles/configs.scss';
+
+.wrapper {
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  margin-top: 45px;
+}
+
+.more {
+  position: absolute !important;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  position: relative;
+  & + .item {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -17px;
+      border-left: 1px solid $border-color;
+    }
+  }
+
+  &.advantage {
+    &::after {
+      content: '좌석우위';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 45px;
+      height: 40px;
+      background-color: $signiture-color;
+      color: #fff;
+      padding: 4px;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+
+.img {
+  width: 190px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.title {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+}
+.date {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: $signiture-color;
+}
