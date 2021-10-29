@@ -37,7 +37,9 @@ const NavDetail = ({ data }) => {
           </section>
           <section className={styles.banner}>
             <h3 className="a11y-hidden">{`${data.menuName}관련 배너`}</h3>
-            <img src={data.bannerImg} alt="" />
+            <a href="#">
+              <img src={data.bannerImg} alt="" />
+            </a>
           </section>
         </div>
       </div>
